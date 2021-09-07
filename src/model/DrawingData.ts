@@ -4,10 +4,10 @@ export type DrawingData = {
    lines: Line[]
 }
 
-type Line = {
+export type Line = {
    brushColor: string
    brushRadius: 10
    points: Point[]
 }
 
-type Point = { x: string; y: string }
+export type Point = { x: string; y: string }

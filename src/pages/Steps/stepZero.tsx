@@ -28,7 +28,9 @@ const StepZero = (props: StepZeroProps) => {
             immediately if you're ready.
          </Text>
          <Button onClick={props.incrementStep}>
-            button
+            <Text>
+               button
+            </Text>
          </Button>
       </View>
    )

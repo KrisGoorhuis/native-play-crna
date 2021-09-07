@@ -2,7 +2,7 @@ import { baseUrl }         from '../../model/http'
 import axios, {
    AxiosError
 }                          from 'axios'
-import { UserProfile }     from '../../model/UserData'
+import { UserProfile }     from '../../model/DrawingData'
 import { StandardThunk }   from '../../model/redux/thunks'
 import { 
    setFailedRetrievingUserData, 

@@ -6,7 +6,7 @@ import SliceNames         from "../../model/redux/sliceNames"
 import { 
    UserProfile, 
    UserProfileWithTags 
-}                         from "../../model/UserData"
+}                         from "../../model/DrawingData"
  
  
 interface UserDataState {

@@ -1,12 +1,11 @@
 import styles from './indexStyles'
 import React from 'react'
 import { Paper } from '@material-ui/core'
-import CanvasDraw from 'react-canvas-draw'
 import { View } from 'react-native'
 import StepZero from './Steps/stepZero'
 import StepOne from './Steps/stepOne'
 import StepTwo from './Steps/stepTwo'
-import { DrawingData } from '../model/UserData'
+import { DrawingData } from '../model/DrawingData'
 
 const Index = () => {
    const classes = styles()

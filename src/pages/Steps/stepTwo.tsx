@@ -1,14 +1,15 @@
 import styles from './stepOneStyles'
 import React from 'react'
 import { Button, Paper } from '@material-ui/core'
-import CanvasDraw from 'react-canvas-draw'
 import { View, Text } from 'react-native'
-import { DrawingData } from '../../model/UserData'
+import { DrawingData, Point } from '../../model/DrawingData'
 
 interface StepOneProps {
    drawingData : DrawingData
    incrementStep : () => void
 }
+
+const radius = 10 // Move elsewhere? To UI controls?
 
 const StepTwo = (props: StepOneProps) => {
    const classes = styles()
@@ -19,12 +20,24 @@ const StepTwo = (props: StepOneProps) => {
 
    React.useEffect(() => {
       const ctx = (document.getElementById("canvas") as HTMLCanvasElement).getContext("2d")
+      let previousPoint: Point | null = null
 
       for (const line of props.drawingData.lines) {
          for (const point of line.points) {
+            if (previousPoint) { // Connect the dots
+               console.log("Drawing a line between: ", previousPoint, point)
+               ctx.beginPath()
+               ctx.lineWidth = radius * 2
+               ctx.moveTo(parseFloat(previousPoint.x), parseFloat(previousPoint.y))
+               ctx.lineTo(parseFloat(point.x), parseFloat(point.y))
+               ctx.stroke()
+            }
+
             ctx.beginPath()
-            ctx.arc(parseFloat(point.x), parseFloat(point.y), 10, 1, 10)
+            ctx.arc(parseFloat(point.x), parseFloat(point.y), radius, 0, 2 * Math.PI)
             ctx.fill()
+
+            previousPoint = point
          }
       }
    }, [])

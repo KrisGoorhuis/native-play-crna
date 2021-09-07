@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Provider } from 'react-redux'
-import AppIndex from './src/pages/index.tsx'
 import store from './src/redux/index'
 
 
@@ -10,8 +9,9 @@ export default function App() {
    return (
       <Provider store={store}>
          <View style={styles.container}>
-            <AppIndex />
-            <StatusBar style="auto" />
+            <Text>App.js?</Text>
+            {/* <AppIndex />
+            <StatusBar style="auto" /> */}
          </View>
       </Provider>
    )
