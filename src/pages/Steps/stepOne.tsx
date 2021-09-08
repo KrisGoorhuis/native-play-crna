@@ -1,8 +1,7 @@
 import styles from './stepOneStyles'
 import React from 'react'
-import { Button, Paper } from '@material-ui/core'
 import CanvasDraw from 'react-canvas-draw'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 interface StepOneProps {
    saveDrawing: (data: {}) => void
@@ -20,19 +19,15 @@ const StepOne = (props: StepOneProps) => {
 
    return (
       <View>
-         <Paper>
-            <div>
-               <Text>
-                  First, drag the brush around to draw our first image.
-               </Text>
-            </div>
-            <View>
-               <CanvasDraw ref={ref} />
-            </View>
-            <Button onClick={handleStepOneFinish}>
-               button
-            </Button>
-         </Paper>
+         <View>
+            <Text>
+               First, drag the brush around to draw our first image.
+            </Text>
+         </View>
+         <View>
+            <CanvasDraw ref={ref} />
+         </View>
+         <Button title="buttooooon" onPress={handleStepOneFinish} />
       </View>
    )
 }

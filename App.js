@@ -3,17 +3,16 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Provider } from 'react-redux'
 import store from './src/redux/index'
-
+import AppIndex from './src/pages'
 
 export default function App() {
    return (
-      <Provider store={store}>
+      // <Provider store={store}>
          <View style={styles.container}>
-            <Text>App.js?</Text>
-            {/* <AppIndex />
-            <StatusBar style="auto" /> */}
+            <AppIndex />
+            <StatusBar style="auto" />
          </View>
-      </Provider>
+      // </Provider>
    )
 }
 

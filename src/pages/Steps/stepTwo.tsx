@@ -1,7 +1,6 @@
 import styles from './stepOneStyles'
 import React from 'react'
-import { Button, Paper } from '@material-ui/core'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import { DrawingData, Point } from '../../model/DrawingData'
 
 interface StepOneProps {
@@ -44,19 +43,15 @@ const StepTwo = (props: StepOneProps) => {
 
    return (
       <View>
-         <Paper>
-            <div>
-               <Text>
-                  Step two. Drawn thing
-               </Text>
-            </div>
-            <View>
-               <canvas id="canvas" width={600} height={500}></canvas>
-            </View>
-            <Button onClick={handleStepOneFinish}>
-               button
-            </Button>
-         </Paper>
+         <View>
+            <Text>
+               Step two. Drawn thing
+            </Text>
+         </View>
+         <View>
+            <canvas id="canvas" width={600} height={500}></canvas>
+         </View>
+         <Button title={"Button!"} onPress={handleStepOneFinish} />
       </View>
    )
 }

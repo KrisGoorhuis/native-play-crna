@@ -1,7 +1,6 @@
 import styles from './stepOneStyles'
 import React from 'react'
-import { Button } from '@material-ui/core'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 
 interface StepZeroProps {
@@ -27,11 +26,7 @@ const StepZero = (props: StepZeroProps) => {
             Welcome! Don't worry about the particulars, we can get started
             immediately if you're ready.
          </Text>
-         <Button onClick={props.incrementStep}>
-            <Text>
-               button
-            </Text>
-         </Button>
+         <Button title="another button!" onPress={props.incrementStep} />
       </View>
    )
 }

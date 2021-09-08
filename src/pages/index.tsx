@@ -1,7 +1,7 @@
 import styles from './indexStyles'
 import React from 'react'
 import { Paper } from '@material-ui/core'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import StepZero from './Steps/stepZero'
 import StepOne from './Steps/stepOne'
 import StepTwo from './Steps/stepTwo'
@@ -43,13 +43,15 @@ const Index = () => {
                />
             )
          default:
-            return <div>You've reached the default</div>
+            return <View><Text>You've reached the default</Text></View>
       }
    }
 
    return (
       <View>
-         <Paper className={classes.contents}>{getStep()}</Paper>
+         {  
+            getStep()
+         }
       </View>
    )
 }
