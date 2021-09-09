@@ -27,3 +27,11 @@ Put an image drawn from it underneath the drawing? The more hideous the better.
 "Perfect! Wonderfully minimalistic"
 
 Step three:
+
+
+
+
+
+
+LOG
+html canvas element no work in native. Package replacement? But lazy draw thing must use html element. hum
