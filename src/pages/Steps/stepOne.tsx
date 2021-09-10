@@ -2,6 +2,7 @@ import styles from './stepOneStyles'
 import React from 'react'
 import CanvasDraw from 'react-canvas-draw'
 import { View, Text, Button } from 'react-native'
+import Canvas from 'react-native-canvas'
 
 interface StepOneProps {
    saveDrawing: (data: {}) => void
@@ -17,6 +18,12 @@ const StepOne = (props: StepOneProps) => {
       props.incrementStep()
    }
 
+   const handleCanvas = (canvas) => {
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = 'purple';
+      ctx.fillRect(0, 0, 100, 100);
+   }
+
    return (
       <View>
          <View>
@@ -25,7 +32,8 @@ const StepOne = (props: StepOneProps) => {
             </Text>
          </View>
          <View>
-            <CanvasDraw ref={ref} />
+            <Canvas ref={handleCanvas} />
+            {/* <CanvasDraw ref={ref} /> */}
          </View>
          <Button title="buttooooon" onPress={handleStepOneFinish} />
       </View>
